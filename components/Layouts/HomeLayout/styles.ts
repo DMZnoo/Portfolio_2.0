@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {HTMLAttributes} from "react";
+import { HTMLAttributes } from "react";
 
 export const Container = styled.div`
   margin: 0 auto;
@@ -11,7 +11,7 @@ export const HeroHeader = styled.h1`
 `;
 
 interface IList extends HTMLAttributes<HTMLUListElement> {
-    columnCount?: number;
+  columnCount?: number;
 }
 
 export const List = styled.ul<IList>`
@@ -119,7 +119,7 @@ export const TimeLine = styled.ul`
 
 export const EmailButton = styled.a`
   color: var(--green);
-  width: 150px;
+  width: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -129,6 +129,7 @@ export const EmailButton = styled.a`
   padding: 1rem 1.75rem;
   text-decoration: none;
   cursor: pointer;
+  line-height: 1rem;
   transition: var(--transition);
 `;
 
