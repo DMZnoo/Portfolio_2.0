@@ -10,10 +10,10 @@ const NavBar = () => {
     const [isOpen, setOpen] = React.useState<boolean>(false);
     const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
     return (
-        <nav className={`${isOpen ? 'xs:h-44 md:h-20' : 'xs:h-10 md:h-20'} w-full xs:pt-2 md:pt-0 flex xs:flex-col md:flex-row items-center`}>
+        <nav className={`${isOpen ? 'xs:h-44 md:h-20' : 'h-20'} w-full xs:pt-2 md:pt-0 flex xs:flex-col md:flex-row items-center`}>
             {isMobile ? (
                 <>
-                    <div className={'flex w-full items-center'}>
+                    <div className={'flex w-full justify-end'}>
                         <button className={`mt-2 hamburger hamburger--spin ${isOpen ? 'is-active' : ''}`} type="button" onClick={() => setOpen(!isOpen)}>
                             <span className="hamburger-box">
                                 <span className="hamburger-inner"></span>
