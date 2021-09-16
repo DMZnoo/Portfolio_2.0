@@ -76,9 +76,8 @@ const HomeLayout = () => {
             <div>
               <div className={"flex mb-8"}>
                 <p className={"text-xl mb-2"}>
-                  Hi, My name is Daniel Lee and I enjoy solving hard problems
-                  and create real world applications that can make feasible
-                  impact to the world.
+                  Hi, My name is Daniel Lee and I am a Full Stack Developer
+                  living in New Zealand.
                   <br />
                   <br />
                   I became interested in software development during the time
@@ -88,9 +87,11 @@ const HomeLayout = () => {
                   do.
                   <br />
                   <br />
-                  During this time, I became interested in learning web
-                  technologies and had started to take courses in web
-                  development through Codecademy and Udemy.
+                  What really attracted me most about the software development
+                  is that it forces you to learn new things on the go and solve
+                  interesting, yet hard problems on a daily basis. At the end,
+                  you are also creating a real world application that can make
+                  feasible impact to the world.
                 </p>
               </div>
               <h3>Front-end Technologies</h3>
