@@ -1,6 +1,7 @@
 import NavBar from "../components/NavBar";
 import HomeLayout from "../components/Layouts/HomeLayout";
 import styled from "styled-components";
+import { NextSeo } from "next-seo";
 
 const MainContainer = styled.main`
   display: flex;
@@ -19,9 +20,22 @@ const MainContainer = styled.main`
 
 export default function Home() {
   return (
-    <MainContainer>
-      <NavBar/>
-      <HomeLayout/>
-    </MainContainer>
-  )
+    <>
+      <NextSeo
+        title="Daniel Lee's Portfolio"
+        description="Check out my portfolio to see what I've done and what I am passionate about."
+        openGraph={{
+          url: "https://www.danieljnwlee.com",
+          title: "Daniel Lee's Portfolio",
+          description:
+            "Check out my portfolio to see what I've done and what I am passionate about.",
+          site_name: "Daniel Lee's Portfolio",
+        }}
+      />
+      <MainContainer>
+        <NavBar />
+        <HomeLayout />
+      </MainContainer>
+    </>
+  );
 }
