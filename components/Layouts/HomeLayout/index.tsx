@@ -2,7 +2,6 @@ import * as React from "react";
 // @ts-ignore
 import Fade from "react-reveal/Fade";
 import { motion, AnimatePresence } from "framer-motion";
-import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
 import Card from "../../common/Card";
 import {
@@ -25,7 +24,6 @@ const HomeLayout = () => {
     false,
     false,
   ]);
-  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
   return (
     <>
       <Fade left ssrFadeout>
@@ -116,7 +114,7 @@ const HomeLayout = () => {
         </Section>
       </Fade>
       <Fade left ssrFadeout>
-        <Section className={"py-20"}>
+        <Section className={"py-60"}>
           <h1
             id={"experience"}
             className={"text-4xl text-white xs:self-center md:self-start"}
@@ -126,172 +124,205 @@ const HomeLayout = () => {
           <TimeLineContainer
             className={"flex xs:flex-col md:flex-row md:space-x-10"}
           >
-            <TimeLine className={"xs:mb-8 md:mb-auto"}>
+            <TimeLine className={"xs:mb-8 md:mb-auto xs:flex md:hidden"}>
               <li
-                className={isMobile && currentYear[0] ? "active" : ""}
+                className={`${currentYear[0] ? "active" : ""}`}
                 onClick={() => setCurrentYear([true, false, false])}
               />
               <li
-                className={isMobile && currentYear[1] ? "active" : ""}
+                className={`${currentYear[1] ? "active" : ""}`}
                 onClick={() => setCurrentYear([false, true, false])}
               />
               <li
-                className={
-                  !isMobile || (isMobile && currentYear[2]) ? "active" : ""
-                }
+                className={`${currentYear[2] ? "active" : ""}`}
                 onClick={() => setCurrentYear([false, false, true])}
               />
             </TimeLine>
+            <TimeLine className="xs:mb-8 md:mb-auto xs:hidden md:block">
+              <li className="active" />
+              <li className="" />
+              <li className="" />
+            </TimeLine>
             <div>
               <AnimatePresence initial={false}>
-                {(!isMobile || (isMobile && currentYear[0])) && (
-                  <motion.div
-                    initial="enter"
-                    animate="center"
-                    exit="exit"
-                    transition={{
-                      x: { type: "spring", stiffness: 300, damping: 30 },
-                      opacity: { duration: 0.2 },
-                    }}
+                <motion.div
+                  className={`${
+                    currentYear[0] ? "xs:block" : "xs:hidden"
+                  } md:block`}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{
+                    x: { type: "spring", stiffness: 300, damping: 30 },
+                    opacity: { duration: 0.2 },
+                  }}
+                >
+                  <h2
+                    className={
+                      "text-2xl text-white mb-4 xs:text-center md:text-left"
+                    }
                   >
-                    <h2
-                      className={
-                        "text-2xl text-white mb-4 xs:text-center md:text-left"
-                      }
-                    >
-                      Internship at Orion Health
-                    </h2>
-                    <h3 className={"mb-2"}>Tech Stack</h3>
-                    <List className={"mb-2"} columnCount={3}>
-                      <li>JQuery/CSS</li>
-                      <li>Gulp</li>
-                      <li>Node JS</li>
-                    </List>
-                    <h3>Description</h3>
-                    <List>
-                      <li className={"md:mb-4"}>
-                        Various improvements for the{" "}
-                        <a
-                          className={"pl-1 text-blue-500 font-bold"}
-                          href="https://developer.orionhealth.io/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Developer portal
-                        </a>
-                      </li>
-                    </List>
-                  </motion.div>
-                )}
+                    Software Engineer at Clearhead
+                  </h2>
+                  <h3 className={"mb-2"}>Tech Stack</h3>
+                  <List className={"mb-2"} columnCount={2}>
+                    <li>Next JS</li>
+                    <li>TypeScript</li>
+                    <li>React (Hooks + Context API)</li>
+                    <li>React (Class + Redux)</li>
+                    <li>Styled Components</li>
+                    <li>React-testing-library & Jest</li>
+                    <li>Tailwind</li>
+                    <li>Spring Boot</li>
+                    <li>Keycloak</li>
+                    <li>Jenkins</li>
+                    <li>Terraform</li>
+                  </List>
+                  <h3 className="mt-4 mb-2">Description</h3>
+                  <List>
+                    <li>
+                      Built the booking form for therapists and v.2 release of{" "}
+                      <a
+                        className={"text-blue-500 font-bold pl-1"}
+                        href="https://clearhead.org.nz/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Wellbeing Portal
+                      </a>
+                    </li>
+                    <li>Built v.2 release of authentication screens</li>
+                    <li>
+                      Implemented the first successful suite of front-end unit
+                      tests
+                    </li>
+                    <li>
+                      Built first preview page for the Chatbot UI Components
+                      Library
+                    </li>
+                    <li className="mb-4">
+                      Reduced the load time by 90% on therapist search with map
+                    </li>
+                  </List>
+                </motion.div>
+              </AnimatePresence>
+
+              <AnimatePresence initial={false}>
+                <motion.div
+                  className={`${
+                    currentYear[1] ? "xs:block" : "xs:hidden"
+                  } md:block`}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{
+                    x: { type: "spring", stiffness: 300, damping: 30 },
+                    opacity: { duration: 0.2 },
+                  }}
+                >
+                  <h2
+                    className={
+                      "text-2xl text-white mb-4 xs:text-center md:text-left"
+                    }
+                  >
+                    Internship at Clearhead
+                  </h2>
+                  <h3 className={"mb-2"}>Tech Stack</h3>
+                  <List className={"mb-2"} columnCount={2}>
+                    <li>Next JS</li>
+                    <li>TypeScript</li>
+                    <li>React (Hooks + Context API)</li>
+                    <li>React (Class + Redux)</li>
+                    <li>Styled Components</li>
+                    <li>Spring Boot</li>
+                    <li>Keycloak</li>
+                    <li>Jenkins</li>
+                    <li>Terraform</li>
+                  </List>
+                  <h3 className="mt-4 mb-2">Description</h3>
+                  <List className={"md:mb-4"}>
+                    <li>
+                      Helped develop Blue-Green Deployment script to reduce
+                      downtime ({"<"}45 mins) of servers and crashes due to
+                      build failures.
+                    </li>
+                    <li>
+                      Improved REST-validation and reduced redundant REST
+                      endpoints
+                    </li>
+                    <li>
+                      Worked on the launch of the product{" "}
+                      <a
+                        className={"pl-1 text-red-500 font-bold"}
+                        href="https://clearhead.org.nz/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Small Steps
+                      </a>
+                    </li>
+                  </List>
+                </motion.div>
               </AnimatePresence>
               <AnimatePresence initial={false}>
-                {(!isMobile || (isMobile && currentYear[1])) && (
-                  <motion.div
-                    initial="enter"
-                    animate="center"
-                    exit="exit"
-                    transition={{
-                      x: { type: "spring", stiffness: 300, damping: 30 },
-                      opacity: { duration: 0.2 },
-                    }}
+                <motion.div
+                  className={`${
+                    currentYear[2] ? "xs:block" : "xs:hidden"
+                  } md:block`}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{
+                    x: { type: "spring", stiffness: 300, damping: 30 },
+                    opacity: { duration: 0.2 },
+                  }}
+                >
+                  <h2
+                    className={
+                      "text-2xl text-white mb-4 xs:text-center md:text-left"
+                    }
                   >
-                    <h2
-                      className={
-                        "text-2xl text-white mb-4 xs:text-center md:text-left"
-                      }
-                    >
-                      Internship at Clearhead
-                    </h2>
-                    <h3 className={"mb-2"}>Tech Stack</h3>
-                    <List className={"mb-2"} columnCount={2}>
-                      <li>Next JS</li>
-                      <li>TypeScript</li>
-                      <li>React (Hooks + Context API)</li>
-                      <li>React (Class + Redux)</li>
-                      <li>Styled Components</li>
-                      <li>Spring Boot</li>
-                      <li>Keycloak</li>
-                      <li>Jenkins</li>
-                      <li>Terraform</li>
-                    </List>
-                    <h3>Description</h3>
-                    <List className={"md:mb-4"}>
-                      <li>Blue/Green Deployment Pipeline with Terraform</li>
-                      <li>Spring Boot Validation</li>
+                    Internship at Orion Health
+                  </h2>
+                  <h3 className={"mb-2"}>Tech Stack</h3>
+                  <List className={"mb-2"} columnCount={3}>
+                    <li>JQuery/CSS</li>
+                    <li>Gulp</li>
+                    <li>Node JS</li>
+                  </List>
+                  <h3 className="mt-4 mb-2">Description</h3>
+                  <List>
+                    <li className={"xs:mb-4 md:mb-2"}>
+                      Various improvements for the{" "}
+                      <a
+                        className={"pl-1 text-blue-500 font-bold"}
+                        href="https://developer.orionhealth.io/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Developer portal
+                      </a>
+                    </li>
+                    <ul className="list-disc ml-8">
                       <li>
-                        Various work on the{" "}
-                        <a
-                          className={"pl-1 text-blue-500 font-bold"}
-                          href="https://clearhead.org.nz/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Wellbeing Portal
-                        </a>
+                        Built site-wide filter functionality and styling of the
+                        filter
                       </li>
                       <li>
-                        Worked on the initial launch of{" "}
-                        <a
-                          className={"pl-1 text-red-500 font-bold"}
-                          href="https://clearhead.org.nz/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Small Steps
-                        </a>
+                        Improved styling of the site with Flex CSS and global
+                        CSS variables
                       </li>
-                    </List>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-              <AnimatePresence initial={false}>
-                {(!isMobile || (isMobile && currentYear[2])) && (
-                  <motion.div
-                    initial="enter"
-                    animate="center"
-                    exit="exit"
-                    transition={{
-                      x: { type: "spring", stiffness: 300, damping: 30 },
-                      opacity: { duration: 0.2 },
-                    }}
-                  >
-                    <h2
-                      className={
-                        "text-2xl text-white mb-4 xs:text-center md:text-left"
-                      }
-                    >
-                      Software Engineer at Clearhead
-                    </h2>
-                    <h3 className={"mb-2"}>Tech Stack</h3>
-                    <List className={"mb-2"} columnCount={2}>
-                      <li>Next JS</li>
-                      <li>TypeScript</li>
-                      <li>React (Hooks + Context API)</li>
-                      <li>React (Class + Redux)</li>
-                      <li>Styled Components</li>
-                      <li>React-testing-library & Jest</li>
-                      <li>Tailwind</li>
-                      <li>Spring Boot</li>
-                      <li>Keycloak</li>
-                      <li>Jenkins</li>
-                      <li>Terraform</li>
-                    </List>
-                    <h3>Description</h3>
-                    <List>
                       <li>
-                        Currently working on V2 release of the{" "}
-                        <a
-                          className={"text-blue-500 font-bold pl-1"}
-                          href="https://clearhead.org.nz/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Wellbeing Portal
-                        </a>
+                        Built sample curl command/response panel for the API
+                        page
                       </li>
-                    </List>
-                  </motion.div>
-                )}
+                      <li>
+                        Improved API token validation/rehydration for the
+                        front-end
+                      </li>
+                    </ul>
+                  </List>
+                </motion.div>
               </AnimatePresence>
             </div>
           </TimeLineContainer>

@@ -62,13 +62,13 @@ export const TimeLine = styled.ul`
     height: 343px;
   }
   > li:first-child:before {
-    content: '2019';
+    content: '2021';
   }
   > li:nth-child(2):before {
     content: '2020';
   }
   > li:last-child:before {
-    content: '2021';
+    content: '2019';
   }
   > li:before {
     width: 35px;
@@ -91,7 +91,6 @@ export const TimeLine = styled.ul`
   }
   @media screen and (max-width: 767px) {
     list-style-type: none;
-    display: flex;
     justify-content: center;
     > li {
       width: 25%;
