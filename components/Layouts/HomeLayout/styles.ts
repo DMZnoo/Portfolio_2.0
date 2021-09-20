@@ -111,8 +111,10 @@ export const TimeLine = styled.ul`
   > li.active:before {
     border-color: #55b776;
   }
-  > li.active + li:after {
-    background-color: #55b776;
+  > li.active {
+    :after {
+      background-color: #55b776;
+    }
   }
 `;
 
@@ -148,11 +150,11 @@ export const OtherProjectGrid = styled.ul`
 
 export const ProjectGrid = styled.ul`
     width: 100%;
-    > div {
+    > div:not(:last-child) {
       margin-bottom: 30%;
     }
   @media screen and (min-width: 768px) {
-    > div:nth-of-type(odd)  img{
+    > div:nth-of-type(odd) img{
       margin-right: 10%;
     }
     > div:nth-of-type(even) img {

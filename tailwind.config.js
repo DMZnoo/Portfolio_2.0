@@ -11,6 +11,9 @@ module.exports = {
       xxl: '1440px',
     },
     extend: {
+      height: {
+        max: 'max-content',
+      },
     },
   },
   variants: {

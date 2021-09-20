@@ -25,9 +25,9 @@ const HomeLayout = () => {
     false,
   ]);
   return (
-    <div className="overflow-x-hidden">
+    <main className="h-max overflow-x-hidden">
       <Fade left ssrFadeout>
-        <Section className={"min-h-screen"}>
+        <Section className={"min-h-screen xs:px-5 lg:px-40"}>
           <p className={"mb-2"}>Hello, my name is</p>
           <HeroHeader className={"text-5xl text-white mb-8"}>
             Daniel Lee
@@ -50,7 +50,7 @@ const HomeLayout = () => {
         </Section>
       </Fade>
       <Fade right ssrFadeout>
-        <Section className={"py-20"}>
+        <Section className={"py-20 xs:px-5 lg:px-40"}>
           <h1
             id={"about-me"}
             className={"text-4xl text-white mb-8 xs:self-center md:self-start"}
@@ -114,7 +114,7 @@ const HomeLayout = () => {
         </Section>
       </Fade>
       <Fade left ssrFadeout>
-        <Section className={"py-60"}>
+        <Section className={"py-20 md:pb-96 xs:px-5 lg:px-40"}>
           <h1
             id={"experience"}
             className={"text-4xl text-white xs:self-center md:self-start"}
@@ -329,7 +329,7 @@ const HomeLayout = () => {
         </Section>
       </Fade>
       <Fade right ssrFadeout>
-        <Section className={"py-20"}>
+        <Section className={"py-20 xs:px-5 lg:px-40"}>
           <h1
             id={"projects"}
             className={"text-4xl text-white xs:self-center md:self-start mb-8"}
@@ -369,7 +369,7 @@ const HomeLayout = () => {
         </Section>
       </Fade>
       <Fade left ssrFadeout>
-        <Section className={"py-20"}>
+        <Section className={"py-20 xs:px-5 lg:px-40"}>
           <h2
             className={"text-3xl text-white xs:self-center md:self-start mb-8"}
           >
@@ -419,7 +419,7 @@ const HomeLayout = () => {
         </Section>
       </Fade>
       <Fade right ssrFadeout>
-        <Section className={"py-20"}>
+        <Section className={"py-20 xs:px-5 lg:px-40"}>
           <h2
             className={"text-4xl text-white xs:self-center md:self-start mb-8"}
           >
@@ -456,7 +456,7 @@ const HomeLayout = () => {
           </div>
         </Section>
       </Fade>
-    </div>
+    </main>
   );
 };
 
