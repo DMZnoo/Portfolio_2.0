@@ -25,7 +25,7 @@ const HomeLayout = () => {
     false,
   ]);
   return (
-    <>
+    <div className="overflow-x-hidden">
       <Fade left ssrFadeout>
         <Section className={"min-h-screen"}>
           <p className={"mb-2"}>Hello, my name is</p>
@@ -456,7 +456,7 @@ const HomeLayout = () => {
           </div>
         </Section>
       </Fade>
-    </>
+    </div>
   );
 };
 
