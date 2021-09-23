@@ -30,7 +30,7 @@ const HomeLayout = () => {
         <Section className={"min-h-screen xs:px-5 lg:px-40"}>
           <p className={"mb-2"}>Hello, my name is</p>
           <HeroHeader className={"text-5xl text-white mb-8"}>
-            Daniel Lee
+            Jinwoo Lee
           </HeroHeader>
           <p className={"text-2xl"}>
             I&apos;m a software engineer living in{" "}
